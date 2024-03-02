@@ -40,7 +40,12 @@ public class Student {
         return feesTotal;
     }
 
-    public void updateFeesPaid(int payment){
+    public void payFees(int payment){
         feesPaid+=payment;
+        School.updateTotalMoneyEarned(payment);
+    }
+
+    public int getRemainingFees(){
+        return (feesTotal-feesPaid);
     }
 }
